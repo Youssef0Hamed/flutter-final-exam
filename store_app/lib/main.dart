@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:store_app/view%20model/item_provider.dart';
 import 'package:store_app/view/screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => ItemProvider(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

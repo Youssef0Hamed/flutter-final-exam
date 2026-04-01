@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/model/item_model.dart';
 import 'package:store_app/view/constans/item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -62,7 +63,9 @@ class HomeScreen extends StatelessWidget {
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                 ),
-                itemBuilder: (context, index) => Item(),
+                itemBuilder: (context, index) => Item(
+                  model: ItemModel(title: "Linen Blend Shirt", price: 120),
+                ),
               ),
             ),
           ],
