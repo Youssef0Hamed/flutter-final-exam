@@ -80,7 +80,7 @@ class ItemDetails extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      pro.remove_from_card(model);
+                      // pro.decrease_quntity(model);
                     },
                     icon: Icon(Icons.remove),
                   ),

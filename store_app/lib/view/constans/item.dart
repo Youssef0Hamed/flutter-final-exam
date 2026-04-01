@@ -36,6 +36,7 @@ class Item extends StatelessWidget {
                     child: IconButton(
                       onPressed: () {
                         pro.add_to_card(model);
+                        print("added");
                       },
                       icon: Icon(Icons.add),
                     ),

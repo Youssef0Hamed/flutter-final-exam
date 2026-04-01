@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/model/item_model.dart';
 import 'package:store_app/view/constans/item.dart';
+import 'package:store_app/view/screens/cardd.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,7 +10,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [Icon(Icons.card_travel_sharp)],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return
+                    cardd();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.card_travel),
+          ),
+        ],
         leading: Icon(Icons.search),
 
         title: Text("New arrivals"),
