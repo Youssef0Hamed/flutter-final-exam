@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ItemModel {
   final String title;
-  final Image? img;
+  final String? img;
   final double price;
   final String? suptitle;
   final String? size;
@@ -10,7 +10,7 @@ class ItemModel {
   ItemModel({
     required this.title,
    this.img,
-   this.quantity = 1 ,
+   this.quantity = 0 ,
     required this.price,
     this.suptitle,
     this.size,

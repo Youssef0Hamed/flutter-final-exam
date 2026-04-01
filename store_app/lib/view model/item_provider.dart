@@ -24,15 +24,18 @@ class ItemProvider extends ChangeNotifier {
     return total_price;
   }
 
-  void increase_quntity(int index) {
+   increase_quntity(int index) {
     cart_items[index].quantity++;
     notifyListeners();
   }
 
-  void decrease_quntity(int index) {
+   decrease_quntity(int index) {
     if (cart_items[index].quantity > 1) {
       cart_items[index].quantity--;
       notifyListeners();
+    }
+    else {
+      remove_from_card(index);
     }
   }
 

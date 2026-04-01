@@ -4,9 +4,31 @@ import 'package:store_app/view/constans/item.dart';
 import 'package:store_app/view/screens/cardd.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
 
   @override
+  List<ItemModel> items = [
+  ItemModel(
+    title: "Linen Blend Shirt",
+    price: 120,
+    img: "assets/1.jpg",
+  ),
+  ItemModel(
+    title: "Denim Jacket",
+    price: 200,
+    img: "assets/2.jpg",
+  ),
+  ItemModel(
+    title: "Sneakers",
+    price: 150,
+    img: "assets/3.jpg",
+  ),
+  ItemModel(
+    title: "T-shirt",
+    price: 80,
+    img: "assets/8.jpg",
+  ),
+];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -72,7 +94,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 15),
             Expanded(
               child: GridView.builder(
-                itemCount: 7,
+                itemCount: items.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.8,
@@ -80,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisSpacing: 10,
                 ),
                 itemBuilder: (context, index) => Item(
-                  model: ItemModel(title: "Linen Blend Shirt", price: 120),
+                  model: items[index],
                 ),
               ),
             ),

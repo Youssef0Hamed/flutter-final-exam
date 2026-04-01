@@ -25,7 +25,7 @@ class Item extends StatelessWidget {
                   width: double.infinity,
                   child: ClipRRect(
                     borderRadius: BorderRadiusGeometry.circular(16),
-                    child: Container(color: Colors.amber),
+                    child: Image.asset(model.img!),
                   ),
                 ),
                 Positioned(

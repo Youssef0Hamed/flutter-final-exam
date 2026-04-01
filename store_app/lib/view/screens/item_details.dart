@@ -11,12 +11,10 @@ class ItemDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pro = Provider.of<ItemProvider>(context);
-    return Scaffold(
-      appBar: AppBar(
-        actions: [Icon(Icons.favorite)],
+    int index = pro.cart_items.indexOf(model);
 
-        title: Text("minimalist Sneaker"),
-      ),
+    return Scaffold(
+      appBar: AppBar(actions: [Icon(Icons.favorite)], title: Text(model.title)),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -27,11 +25,14 @@ class ItemDetails extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.amber,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadiusGeometry.circular(15),
+                child: Image.asset(model.img!, fit: BoxFit.cover),
               ),
             ),
             Text(
-              "Minimalist Sneaker",
+              model.title,
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 15),
@@ -43,7 +44,7 @@ class ItemDetails extends StatelessWidget {
             SizedBox(height: 15),
 
             Text(
-              "\$120",
+              "\$${model.price}",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 15),
@@ -80,14 +81,26 @@ class ItemDetails extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      // pro.decrease_quntity(model);
+                      if (index != -1) {
+                        pro.decrease_quntity(index);
+                      } else {
+                        pro.cart_items.add(model);
+                      }
                     },
                     icon: Icon(Icons.remove),
                   ),
-                  Text(pro.total_price.toString()),
+                  Text(
+                    index != -1
+                        ? pro.cart_items[index].quantity.toString()
+                        : "0",
+                  ),
                   IconButton(
                     onPressed: () {
-                      pro.add_to_card(model);
+                      if (index == -1) {
+                        pro.add_to_card(model); // لو مش موجود → ضيفه الأول
+                      } else {
+                        pro.increase_quntity(index);
+                      }
                     },
                     icon: Icon(Icons.add),
                   ),
