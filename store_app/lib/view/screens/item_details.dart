@@ -12,6 +12,7 @@ class ItemDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final pro = Provider.of<ItemProvider>(context);
     int index = pro.cart_items.indexOf(model);
+    print(index);
 
     return Scaffold(
       appBar: AppBar(actions: [Icon(Icons.favorite)], title: Text(model.title)),
@@ -83,9 +84,7 @@ class ItemDetails extends StatelessWidget {
                     onPressed: () {
                       if (index != -1) {
                         pro.decrease_quntity(index);
-                      } else {
-                        pro.cart_items.add(model);
-                      }
+                      } 
                     },
                     icon: Icon(Icons.remove),
                   ),
@@ -96,11 +95,9 @@ class ItemDetails extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      if (index == -1) {
-                        pro.add_to_card(model); // لو مش موجود → ضيفه الأول
-                      } else {
-                        pro.increase_quntity(index);
-                      }
+                      index == -1
+                          ? pro.add_to_card(model) // لو مش موجود → ضيفه الأول
+                          : pro.increase_quntity(index);
                     },
                     icon: Icon(Icons.add),
                   ),

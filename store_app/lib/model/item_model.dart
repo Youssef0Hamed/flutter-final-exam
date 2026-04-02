@@ -7,10 +7,11 @@ class ItemModel {
   final String? suptitle;
   final String? size;
   int quantity ;
+
   ItemModel({
     required this.title,
    this.img,
-   this.quantity = 0 ,
+   this.quantity = 1 ,
     required this.price,
     this.suptitle,
     this.size,

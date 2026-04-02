@@ -97,7 +97,7 @@ class cardd extends StatelessWidget {
                                 InkWell(
                                   onTap: () => pro.decrease_quntity(index),
                                   child: Center(
-                                    child: Container(
+                                    child: SizedBox(
                                       width: 30,
                                       height: 30,
                                       child: Icon(Icons.minimize, size: 20),
@@ -108,7 +108,7 @@ class cardd extends StatelessWidget {
                                 InkWell(
                                   onTap: () => pro.increase_quntity(index),
                                   child: Center(
-                                    child: Container(
+                                    child: SizedBox(
                                       width: 30,
                                       height: 30,
                                       child: Icon(Icons.add, size: 20),
