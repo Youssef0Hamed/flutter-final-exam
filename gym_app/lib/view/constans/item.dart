@@ -50,7 +50,7 @@ class Item extends StatelessWidget {
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
                 ),
-                child: Image.asset(itemModel.img),
+                child: Image.asset(itemModel.img,fit: BoxFit.fill,),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),

@@ -17,7 +17,7 @@ class ClassDetails extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(itemModel.img, height: 250, fit: BoxFit.cover),
+            Image.asset(itemModel.img, fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -81,20 +81,24 @@ class ClassDetails extends StatelessWidget {
                   Text(
                     """Youssef Hamed is a software developer and student at I-Tech School, enrolled in a selective 5-year program co-designed with IBM — one of the world’s leading technology companies. This collaboration provides hands-on exposure to enterprise software practices, cloud technologies, and professional engineering standards..""",
                     style: TextStyle(fontSize: 12),
-                  ),
+                  ),SizedBox(height: 15,),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey[300]!),
+
+                      borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
                     ),
                     child: ListTile(
                       leading: CircleAvatar(
+                        radius: 30,
                         backgroundImage: AssetImage(itemModel.img),
                       ),
                       title: Text(itemModel.title),
                       subtitle: Text("${itemModel.des}"),
                     ),
                   ),
+                  SizedBox(height: 15,),
                 ],
               ),
             ),
@@ -102,7 +106,7 @@ class ClassDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
                       Text(
@@ -170,8 +174,9 @@ class details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.orange,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey[300]!),
       ),
       width: 150,
       child: Padding(

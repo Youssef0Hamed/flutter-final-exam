@@ -15,7 +15,7 @@ class ItemModel {
     this.des = "this is des",
     this.time,
     this.price = 25,
-    this.couch,
-    this.datetime,
+    this.couch = "alix ray",
+    this.datetime = "7:00 AM - 7:45 AM",
   });
 }
