@@ -3,10 +3,16 @@ import 'package:store_app/model/item_model.dart';
 
 class ItemProvider extends ChangeNotifier {
   final List<ItemModel> cart_items = [];
+
+  
   //  add to card
   void add_to_card(ItemModel item) {
-    cart_items.add(item);
-    notifyListeners();
+    if (cart_items.contains(item))
+      {return;}
+    else {
+      cart_items.add(item);
+      notifyListeners();
+    }
   }
 
   //  remove from card
@@ -24,17 +30,16 @@ class ItemProvider extends ChangeNotifier {
     return total_price;
   }
 
-   increase_quntity(int index) {
+  increase_quntity(int index) {
     cart_items[index].quantity++;
     notifyListeners();
   }
 
-   decrease_quntity(int index) {
+  decrease_quntity(int index) {
     if (cart_items[index].quantity > 1) {
       cart_items[index].quantity--;
       notifyListeners();
-    }
-    else {
+    } else {
       remove_from_card(index);
     }
   }

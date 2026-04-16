@@ -13,7 +13,7 @@ class ItemModel {
    this.img,
    this.quantity = 1 ,
     required this.price,
-    this.suptitle,
+    this.suptitle, 
     this.size,
   });
 }

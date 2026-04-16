@@ -89,15 +89,12 @@ class ItemDetails extends StatelessWidget {
                     icon: Icon(Icons.remove),
                   ),
                   Text(
-                    index != -1
-                        ? pro.cart_items[index].quantity.toString()
-                        : "0",
+                    model.quantity.toString()
                   ),
                   IconButton(
                     onPressed: () {
-                      index == -1
-                          ? pro.add_to_card(model) // لو مش موجود → ضيفه الأول
-                          : pro.increase_quntity(index);
+                       pro.add_to_card(model) ;// لو مش موجود → ضيفه الأول
+                        
                     },
                     icon: Icon(Icons.add),
                   ),
