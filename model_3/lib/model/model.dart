@@ -2,7 +2,12 @@ class item_Model {
   final String title;
   final String dis;
   final double price;
-  final int quantaty = 1;
+   int quantaty;
 
-  item_Model({required this.title, required this.dis, required this.price});
+  item_Model({
+    required this.title,
+    required this.dis,
+    required this.price,
+     this.quantaty = 1,
+  });
 }

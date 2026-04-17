@@ -15,7 +15,11 @@ class Item extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => details_Screen()),
+          MaterialPageRoute(
+            builder: (context) => details_Screen(
+              Item_model: item_Model(title: "title", dis: "dis", price: 24),
+            ),
+          ),
         );
       },
       child: Container(
